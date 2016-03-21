@@ -1,0 +1,19 @@
+{
+  "name": "Example",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node_modules/react-native/packager/packager.sh"
+  },
+  "dependencies": {
+    "fbjs": "^0.6.0",
+    "react-native": "^0.21",
+    "react-native-button": "^1.2.1",
+    "react-native-fbsdkcore": "0.0.8",
+    "react-native-fbsdklogin": "0.0.8",
+    "react-native-router-flux": "^2.3.12",
+    "react-redux": "^4.4.1",
+    "redux": "^3.3.1",
+    "redux-thunk": "1.0.3"
+  }
+}
