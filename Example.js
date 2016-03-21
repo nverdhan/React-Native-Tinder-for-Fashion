@@ -8,11 +8,32 @@ var Login = require('./app/components/Login');
 var Login2 = require('./app/components/Login2');
 var {Router, Route, Schema, Animations, TabBar} = require('react-native-router-flux');
 var Error = require('./app/components/Error');
-var Home = require('./app/components/Home');
 var TabView = require('./app/components/TabView');
-var App = require('./app/containers/app')
 var TinderCards = require('./app/components/swipecards')
 var SwipeCards = require('./app/containers/swipeCardContainer')
+// import Storage from 'react-native-storage';
+
+
+// var storage = new Storage({
+//     // maximum capacity, default 1000  
+//     size: 1000,    
+    
+//     // expire time, default 1 day(1000 * 3600 * 24 secs) 
+//     defaultExpires: 1000 * 3600 * 24,
+    
+//     // cache data in the memory. default is true. 
+//     enableCache: true,
+    
+//     // if data was not found in storage or expired, 
+//     // the corresponding sync method will be invoked and return  
+//     // the latest data. 
+//     sync : {
+//         // we'll talk about the details later. 
+//     }
+// })
+
+// global.storage = storage;
+
 
 class TabIcon extends React.Component {
     render(){
@@ -38,10 +59,8 @@ export default class Example extends React.Component {
                 <Schema name="tab" type="switch" icon={TabIcon} />
 
                 <Route name="register" component={Register} title="Register"/>
-                <Route name="home" component={Home} title="Replace" type="replace"/>
                 <Route name="tinderCards" component={TinderCards} title="TinderCards"/>
                 <Route name="swipeCards" component={SwipeCards} title="SwipeCards"/>
-                <Route name="redux" component={App} title="Redux" />
                 <Route name="login" schema="modal">
                     <Router name="loginRouter">
                         <Route name="loginModal" component={Login} schema="modal"/>

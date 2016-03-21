@@ -7,7 +7,6 @@ var Actions = require('react-native-router-flux').Actions;
 
 class Login extends React.Component {
     render(){
-        console.log(Actions.currentRouter.name);
         return (
             <View style={styles.container}>
                 <Text>Login page: {this.props.data}</Text>

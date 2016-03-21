@@ -15,6 +15,7 @@
     "react-redux": "^4.4.1",
     "redux": "^3.3.1",
     "redux-thunk": "1.0.3",
-    "react-native-loading-spinner-overlay": "0.0.7"
+    "react-native-loading-spinner-overlay": "0.0.7",
+    "react-native-storage" : "0.0.16"
   }
 }

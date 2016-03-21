@@ -2,7 +2,6 @@
 
 import React, { Component, View } from 'react-native';
 import {bindActionCreators} from 'redux';
-import Counter from '../components/counter';
 import * as counterActions from '../actions/counterActions';
 import { connect } from 'react-redux';
 import SwipeCards from '../components/swipecards'

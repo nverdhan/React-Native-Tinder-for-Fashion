@@ -73,6 +73,7 @@ export function fetchDataError(response){
 }
 
 export function add(id){
+
 	return {
 		type: types.ADD,
 		data: {id}

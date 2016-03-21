@@ -65,7 +65,6 @@ class SwipeCards extends Component {
 
   componentWillReceiveProps(nextProps){
     if(nextProps.persons.length > 0){
-      console.log(nextProps.persons);
       this.setState({
         cards: nextProps.persons
       })
@@ -100,7 +99,7 @@ class SwipeCards extends Component {
           if(this.state.pan.x._value < 0){
             this.props.remove()
           }else{
-            this.props.add(1);
+            this.props.add(this.state.cards[this.state.currentPosition].id);
           }
         
           Animated.decay(this.state.pan, {

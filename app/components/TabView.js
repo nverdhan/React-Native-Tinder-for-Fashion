@@ -8,7 +8,6 @@ var Actions = require('react-native-router-flux').Actions;
 
 class TabView extends React.Component {
     render(){
-        console.log(Actions.currentRouter.name);
         return (
             <View style={styles.container}>
                 <Text>Tab {this.props.title}</Text>
