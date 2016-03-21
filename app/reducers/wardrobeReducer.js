@@ -13,9 +13,7 @@ export default function wardrobeReducer(state = initialState, action = {}) {
       };
       break;
     case types.FETCH_DATA_SUCCESS:
-      console.log('success fetching data');
       state.products = action.data.products;
-      console.log(action);
       return {
         ...state, 
         products: state.products

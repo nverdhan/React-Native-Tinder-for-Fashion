@@ -14,7 +14,6 @@ export function getDataFromAPI(){
 			      .then((response) => response.json())
 			      .then((resJson) => {
 			        var productUrl = resJson.apiGroups.affiliate.apiListings['womens_clothing'].availableVariants['v0.1.0'].get;
-			        console.log(productUrl);
 			        fetch(productUrl, 
 					{
 						mode: 'no-cors', 
@@ -41,10 +40,28 @@ export function fetchData(){
 }
 
 export function fetchDataSuccess(data){
-	console.log(data);
+	var products = [];
+
+	var ifAlreadyAdded = function(name){
+		for (var i = 0; i < products.length; i++) {
+			if(products[i].productBaseInfo.productAttributes.title == name){
+				return true;
+			}
+		}
+		return false;
+	}
+
+	data.products.map(function(product){
+		if(!ifAlreadyAdded(product.productBaseInfo.productAttributes.title)){
+			products.push(product);
+		}
+	})
+
+	var datanew = { products : products };
+
 	return {
 		type: types.FETCH_DATA_SUCCESS,
-		data: data
+		data: datanew
 	}
 }
 

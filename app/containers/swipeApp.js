@@ -1,11 +1,12 @@
 'use strict';
 
-import React, { Component } from 'react-native';
+import React, { Component, View } from 'react-native';
 import {bindActionCreators} from 'redux';
 import Counter from '../components/counter';
 import * as counterActions from '../actions/counterActions';
 import { connect } from 'react-redux';
 import SwipeCards from '../components/swipecards'
+import Spinner from 'react-native-loading-spinner-overlay';
 
 var Persons = [
   {id: 1, name: 'Barrack Obama', image: 'https://pbs.twimg.com/profile_images/451007105391022080/iu1f7brY_400x400.png'},
@@ -19,7 +20,7 @@ var Persons = [
 class SwipeApp extends Component {
 
   state = {
-    products : Persons
+    products : []
   };
 
   constructor(props) {
@@ -49,11 +50,24 @@ class SwipeApp extends Component {
   render() {
     const { state, actions } = this.props;
     const { products } = this.state;
-    return (
-      <SwipeCards
-        persons= {products}
-        {...actions} />
-    );
+
+    if(products.length > 0){
+      return (
+          <SwipeCards
+            persons= {products}
+            {...actions} />
+        );
+    }else{
+
+      return (
+        <View style={{ flex: 1 }}>
+          <Spinner visible={true} />
+        </View>
+        )
+
+    }
+
+    
   }
 }
 
