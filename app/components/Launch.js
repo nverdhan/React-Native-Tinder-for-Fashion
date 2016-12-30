@@ -36,4 +36,4 @@ var styles = StyleSheet.create({
     }
 });
 
-module.exports = Launch;
+export default Launch;
